@@ -84,7 +84,7 @@ defmodule LL do
         {ref, ref, ref} -> %LL{table: table, size: size, head: nil, tail: nil}
         {head, _, head} -> %LL{table: table, size: size, head: next, tail: tail}
         {_, tail, tail} -> %LL{table: table, size: size, head: head, tail: prev}
-        _ -> list
+        _ -> %LL{list | size: size}
       end
 
     { list, val }
